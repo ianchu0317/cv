@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ian Chen - CV</title>
+    <meta http-equiv="refresh" content="0; url=cv.pdf">
+    <link rel="canonical" href="cv.pdf">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .loading {
+            margin-top: 1rem;
+            color: #666;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ian Chen</h1>
+        <p>Redirecting to CV...</p>
+        <div class="loading">
+            <p>If you are not redirected automatically, <a href="cv.pdf">click here to view my CV</a></p>
+            <p><a href="cv-esp.pdf">Ver CV en español</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Fallback redirect in case meta refresh doesn't work
+        setTimeout(function() {
+            window.location.href = 'cv.pdf';
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+\usepackage{fontawesome5}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Ian Chen} \\[7.5pt]
+\href{https://github.com/ianchu0317}{\raisebox{-0.05\height}\faGithub\ ianchu0317} \ $|$ \ 
+\href{https://linkedin.com/in/ianchenn}{\raisebox{-0.05\height}\faLinkedin\ ianchenn} \ $|$ \ 
+\href{https://ianchenn.com}{\raisebox{-0.05\height}\faGlobe \ ianchenn.com} \ $|$ \ 
+\href{mailto:chenian317@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ chenian317@gmail.com}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% ABOUT
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Sobre mi}
+Estudiante de Ingeniería en Informática (FIUBA) con interés en backend, infraestructura, administración de sistemas y automatización. Experiencia en proyectos personales y académicos donde integré Linux, Docker y Python. Busco desarrollarme en roles técnicos como Backend o SysAdmin Junior para aplicar y seguir aprendiendo en entornos reales.
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Administrador de Redes y Sistemas} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+- Instalar, mantener, configurar y actualizar servidores de Linux con virtualización en Proxmox. 
+
+- Deploy proyectos y servicios contenerizados en Docker. 
+
+- Documentación en Bookstack y GitHub. 
+
+- Desarrollar scripts de Bash y Crontab para Backup automatizados.  
+
+- Tecnologías: Proxmox, Linux, Debian, Ubuntu, Docker, Tailscale, Cloudflare, Crontab, Backups, SSH.}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% PROJECTS
+%----------------------------------------------------------------------------------------
+
+%Projects
+\section{Proyectos}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Fobium - Foro web} & \hfill \href{https://www.fobium.com}{fobium.com} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Página web de un foro anónimo para publicar fobias. Mi rol en este trabajo grupal fue el desarrollo de Backend y organización del grupo y el proyecto en general. Tecnologías utilizadas: Python, FastAPI, Postgres SQL, Docker, {Gemini AI}, Git/GitHub, Cloudflare, Proxmox, Trello}  \\
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{ToDoList} & \hfill \href{https://todo.ianchenn.com}{todo.ianchenn.com} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Página web para organizar lista de tareas con autenticacion JWT. Tecnologías utilizadas: FastAPI, MySQL, Docker, Git, Cloudflare, Proxmox 
+}  \\
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Led API} & \hfill \href{https://github.com/ianchu0317/LED-control-API}{GitHub} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Patrones LED controlados por medio de API e interfaz en página web. Tecnologías utilizadas: Arduino, Raspberry Pi, FastAPI, C++, Python
+}  \\
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Blog de Matemática} & \hfill \href{https://ianchu0317.github.io/analisis-matematico-ii/}{analisis-ii.com} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Blog de resoluciones y parciales para análisis matemático 2 UBA. Tecnologías utilizadas: Github Pages, LaTeX, Google Analytics, Google Search Console
+}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Aptitudes}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Idiomas &  \normalsize{Ingles, Español, Chino Mandarín.}\\
+Lenguajes  &  \normalsize{Python, Go, C, Bash, Markdown, LaTeX.}\\ 
+Sistemas  \& herramientas &  \normalsize{Windows, Linux, Ubuntu, Debian, Proxmox, SSH, Systemd, Cron.}\\ 
+Redes  &  \normalsize{Configuración de router, optimización de cableado, testeo de velocidad.}\\ 
+Otros  &  \normalsize{Gestión de proyectos, Documentación, Code review, Code testing, Instalación de sistemas.}\\ 
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Educacion}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+Ingeniería Informática & Facultad de Ingeniería UBA \textbf{(FIUBA)} \hfill \normalsize  \\
+
+Secundario Completo & Colegio Nacional de Buenos Aires \textbf{(CNBA)} \hfill (Promedio: 8.7/10.0) \\ 
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
+
+% \vfill
+% \center{\footnotesize Last updated: \today}
+
+\end{document}

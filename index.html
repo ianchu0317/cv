@@ -1,56 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ian Chen - CV</title>
-    <meta http-equiv="refresh" content="0; url=cv.pdf">
-    <link rel="canonical" href="cv.pdf">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .loading {
-            margin-top: 1rem;
-            color: #666;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ian Chen — SysAdmin | CV</title>
+<meta name="description" content="Ian Chen, administrador de sistemas e ingeniería de software (UBA). Infraestructura, contenedores y backend. CV en español e inglés / Systems administrator, infrastructure and backend. CV in English and Spanish.">
+<link rel="canonical" href="https://cv.ianchenn.com/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ian Chen — CV">
+<meta property="og:description" content="Administrador de sistemas. Infraestructura, contenedores y backend. CV en español e inglés.">
+<meta property="og:url" content="https://cv.ianchenn.com/">
+<meta property="og:image" content="https://cv.ianchenn.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ian Chen",
+  "url": "https://cv.ianchenn.com/",
+  "jobTitle": "Systems Administrator",
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad de Buenos Aires" },
+  "knowsAbout": ["Docker", "Proxmox VE", "Linux", "Go", "Python", "Backend development", "System administration"],
+  "sameAs": [
+    "https://github.com/ianchu0317",
+    "https://www.linkedin.com/in/ianchenn/",
+    "https://ianchenn.com"
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #1f1f1f;
+  --muted: #6a6a67;
+  --line: #e2e2df;
+  --hover: #f1f1ef;
+  --accent: #2d6a4f;
+  --on-text: #ffffff;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #ececea;
+    --muted: #9a9a96;
+    --line: #333331;
+    --hover: #1e1e1d;
+    --accent: #6fcf97;
+    --on-text: #121212;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+header { position: sticky; top: 4rem; }
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+h2 { margin: 0 0 0.75rem; font-size: 1rem; font-weight: 600; }
+.intro p { margin: 0 0 0.75rem; }
+.intro p + p { color: var(--muted); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.btn:hover { background: var(--hover); border-color: var(--muted); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn.primary { background: var(--text); border-color: var(--text); color: var(--on-text); }
+.btn.primary:hover { opacity: 0.85; }
+
+.contact { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+
+.cvs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.cv { display: flex; flex-direction: column; }
+.cv a.preview { display: block; line-height: 0; border-radius: 6px; }
+.cv a.preview:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.cv img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 909 / 1286;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+.cv[data-preferred] img { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.cv[data-preferred] { order: -1; }
+.actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
+
+@media (max-width: 56rem) {
+  main { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 2.5rem; }
+  header { position: static; }
+  h1 { font-size: 2.5rem; }
+}
+@media (max-width: 36rem) {
+  .btn { min-height: 2.75rem; }
+  .cvs { grid-template-columns: 1fr; }
+  .cv { width: 100%; max-width: 24rem; margin: 0 auto; }
+  .actions { justify-content: center; }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Ian Chen</h1>
-        <p>Redirecting to CV...</p>
-        <div class="loading">
-            <p>If you are not redirected automatically, <a href="cv.pdf">click here to view my CV</a></p>
-            <p><a href="cv-esp.pdf">Ver CV en español</a></p>
-        </div>
+<main>
+  <header>
+    <h1>Ian Chen</h1>
+    <div class="intro">
+      <p lang="es">Administrador de sistemas en la UBA y estudiante de Ingeniería en Informática. Trabajo con infraestructura, contenedores y sistemas Linux, con foco en automatización y estabilidad. También llevo adelante mi emprendimiento Tekian IT, y mantengo mi propio homelab.</p>
+      <p lang="en">Systems Administrator at the University of Buenos Aires and Software Engineering student. I work with infrastructure, containers, and Linux systems, focusing on automation and reliability. I also run my own business Tekian IT, and maintain a personal homelab.</p>
     </div>
-    
-    <script>
-        // Fallback redirect in case meta refresh doesn't work
-        setTimeout(function() {
-            window.location.href = 'cv.pdf';
-        }, 1000);
-    </script>
+    <ul class="contact">
+      <li><a class="btn" href="https://github.com/ianchu0317">GitHub</a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/ianchenn/">LinkedIn</a></li>
+      <li><a class="btn" href="mailto:chenian317@gmail.com">Email</a></li>
+      <li><a class="btn" href="https://ianchenn.com">ianchenn.com</a></li>
+    </ul>
+  </header>
+
+  <section class="cvs" aria-label="CV">
+    <article class="cv" lang="en" data-cv="en">
+      <h2>English</h2>
+      <a class="preview" href="cv.pdf" aria-label="Open the English CV">
+        <img src="cv-preview-en.webp" width="909" height="1286" alt="First page of Ian Chen’s CV in English" loading="lazy">
+      </a>
+      <div class="actions">
+        <a class="btn primary" href="cv.pdf">View</a>
+        <a class="btn" href="cv.pdf" download="Ian-Chen-CV-EN.pdf">Download</a>
+      </div>
+    </article>
+
+    <article class="cv" lang="es" data-cv="es">
+      <h2>Español</h2>
+      <a class="preview" href="cv-esp.pdf" aria-label="Abrir el CV en español">
+        <img src="cv-preview-es.webp" width="909" height="1286" alt="Primera página del CV de Ian Chen en español" loading="lazy">
+      </a>
+      <div class="actions">
+        <a class="btn primary" href="cv-esp.pdf">Ver</a>
+        <a class="btn" href="cv-esp.pdf" download="Ian-Chen-CV-ES.pdf">Descargar</a>
+      </div>
+    </article>
+  </section>
+</main>
+
+<script>
+// Resalta el CV en el idioma del navegador. No redirige ni oculta el otro.
+try {
+  var pref = (navigator.language || "").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+  document.querySelector('[data-cv="' + pref + '"]').setAttribute("data-preferred", "");
+} catch (e) {}
+</script>
 </body>
 </html>
